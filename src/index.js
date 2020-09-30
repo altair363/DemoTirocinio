@@ -23,6 +23,7 @@ const WebcamStreamCapture = () => {
     );
     mediaRecorderRef.current.start();
     SpeechRecognition.startListening({continuous : true, language : "it-IT"});
+    resetTranscript();
   }, [webcamRef, setCapturing, mediaRecorderRef]);
 
   const handleDataAvailable = React.useCallback(
@@ -58,7 +59,7 @@ const WebcamStreamCapture = () => {
   }, [recordedChunks]);
 
   return (
-    <>
+    <center>
       {capturing ? (
         <button onClick={handleStopCaptureClick}>Stop Capture</button>
       ) : (
@@ -71,7 +72,7 @@ const WebcamStreamCapture = () => {
       <Webcam audio={true} ref={webcamRef} />       
       
       <p>{transcript}</p>
-    </>
+    </center>
   );
 };
 
