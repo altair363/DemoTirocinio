@@ -71,7 +71,7 @@ const WebcamStreamCapture = () => {
       <br/>
       <Webcam audio={true} ref={webcamRef} />       
       
-      <p>{transcript}</p>
+      <p >{transcript}</p>
     </center>
   );
 };
